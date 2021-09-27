@@ -30,7 +30,7 @@ class HostInfo:
         return c
 
     def get_ssh_command(self):
-        c = "ssh "
+        c = "kitty +kitten ssh "
 
         if self.identity_file:
             c = c + "-i " + self.identity_file + " "
