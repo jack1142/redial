@@ -30,7 +30,7 @@ class HostInfo:
         return c
 
     def get_ssh_command(self):
-        c = f"kitty @ launch --type=tab --tab-title '{self.full_name}' --keep-focus kitty +kitten ssh "
+        c = f"kitty @ launch --type=tab --tab-title '{self.full_name}' kitty +kitten ssh "
 
         if self.identity_file:
             c = c + "-i " + self.identity_file + " "
