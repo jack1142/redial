@@ -164,6 +164,7 @@ def run():
                 rk = os.system(app.command)
                 if rk == 33280 or rk == 0:
                     app.command_return_key = rk
+                    break
                 else:
                     app.command_return_key = rk
                     break
