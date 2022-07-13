@@ -30,7 +30,7 @@ class HostInfo:
         return c
 
     def get_ssh_command(self):
-        c = f"kitty @ launch --type=tab kitty +kitten ssh "
+        c = "kitty @ launch --type=tab sh -c 'kitty +kitten ssh "
 
         if self.identity_file:
             c = c + "-i " + self.identity_file + " "
@@ -51,6 +51,8 @@ class HostInfo:
 
         if self.port:
             c = c + " -p " + self.port
+
+        c = c + " || (echo \"Press ENTER to exit.\" && read REPLY)'"
 
         return c
 
